@@ -13,6 +13,8 @@ Vagrant.configure("2") do |config|
   config.vm.box_url="http://files.vagrantup.com/lucid64.box"
   config.ssh.forward_agent=true
 
+  config.vm.network "forwarded_port", guest: 8080, host: 8080
+
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", "2048"]
     vb.customize ["modifyvm", :id, "--cpus", "2"]
@@ -32,6 +34,7 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "apt"
     chef.add_recipe "postgresql::server"
     chef.add_recipe "liferay"
+    chef.add_recipe "liferay::postgresql"
   end
   
 end
