@@ -18,5 +18,6 @@ Use Vagrant+Chef to initialize Liferay
 7. Select other database than default hypersocnic database
 8. Use `liferay_user` as PostgreSQL user and `l1f3r4y$` as a password
 9. Fill the forms that wizard presents
-10. Profit
+10. ???
+11. Profit
 		
